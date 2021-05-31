@@ -1,0 +1,4 @@
+chalice==1.22.3
+localstack==0.12.9.1
+awscli-local==0.14
+chalice-local==0.1.1
