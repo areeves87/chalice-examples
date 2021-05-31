@@ -74,6 +74,19 @@
               "Effect": "Allow"
             },
             {
+              "Effect": "Allow",
+              "Action": [
+                  "secretsmanager:GetResourcePolicy",
+                  "secretsmanager:GetSecretValue",
+                  "secretsmanager:DescribeSecret",
+                  "secretsmanager:ListSecretVersionIds",
+                  "secretsmanager:ListSecrets"
+              ],
+              "Resource": [
+                  "*"
+              ]
+            },
+            {
               "Action": [
                 "s3:GetObject",
                 "s3:GetObjectVersion",
