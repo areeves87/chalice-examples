@@ -2,12 +2,12 @@ artifacts:
   files:
   - helloworld/transformed.yaml
   type: zip
+env:
+  secrets-manager:
+    ACCESS_KEY: "AWSCredentials:ACCESS_KEY"
+    SECRET_KEY: "AWSCredentials:SECRET_KEY"
 phases:
   build:
-    env:
-      secrets-manager:
-        ACCESS_KEY: "AWSCredentials:ACCESS_KEY"
-        SECRET_KEY: "AWSCredentials:SECRET_KEY"
     commands:
     - jq --arg ACCESS_KEY "$ACCESS_KEY" --arg SECRET_KEY "$SECRET_KEY" '.stages.dev.environment_variables.ACCESS_KEY=$ACCESS_KEY | .stages.dev.environment_variables.SECRET_KEY=$SECRET_KEY' .chalice/config.json > .chalice/config..tmp && mv .chalice/config.tmp .chalice/config.json
     - chalice package /tmp/packaged
