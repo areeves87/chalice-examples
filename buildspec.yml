@@ -11,6 +11,7 @@ phases:
       ${APP_S3_BUCKET} --output-template-file transformed.yaml
   install:
     commands:
+    - cd helloworld
     - pip install 'chalice>=1.22.0,<1.23.0'
     - pip install -r requirements.txt
     runtime-versions:
