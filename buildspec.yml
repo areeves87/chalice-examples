@@ -1,6 +1,6 @@
 artifacts:
   files:
-  - transformed.yaml
+  - helloworld/transformed.yaml
   type: zip
 phases:
   build:
